@@ -14,7 +14,7 @@ let result = g.next(); // [2]
 result.value.then((data) => { // then: return a new promise
     return data.json(); // return as the argument of the next then
 }).then((datajson) => {
-    g.next(datajson);
+    g.next(datajson); // send the value to generator
 }).catch((err) => { // handle err
     console.log(err);
 });
