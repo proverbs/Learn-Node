@@ -28,12 +28,13 @@ superagent.get('https://www.cnblogs.com/proverbs/').then(sres => {
         superagent.get(url).then(sres => { // async
             let $ = cheerio.load(sres.text);
             let node = $('title');
-            console.log(url, node.text());
+            // console.log(url, node.text());
             ep.emit(url, node.text());
         }).catch(err => {
             console.log(err);
         });
     }
+    console.log('reach the end...');
 }).catch(err => {
     console.log(err);
 });
